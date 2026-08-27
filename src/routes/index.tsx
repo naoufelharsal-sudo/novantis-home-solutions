@@ -368,6 +368,113 @@ function Hero() {
             <p className="font-display text-3xl font-bold text-brand-gradient">70%</p>
             <p className="text-xs text-muted-foreground">op uw energiefactuur</p>
           </div>
+          <div className="mt-10 grid grid-cols-3 gap-3">
+            {[
+              { src: projSolarInstall, alt: "Plaatsing van zonnepanelen op een dak" },
+              { src: projTechniek, alt: "Warmtepomp en thuisbatterij in technische ruimte" },
+              { src: projBadkamer, alt: "Afgewerkte moderne badkamer" },
+            ].map((t) => (
+              <img
+                key={t.alt}
+                src={t.src}
+                alt={t.alt}
+                loading="lazy"
+                width={1024}
+                height={768}
+                className="h-20 w-full rounded-lg object-cover ring-1 ring-white/15 sm:h-28"
+              />
+            ))}
+          </div>
+        </div>
+      </div>
+      <img
+        src={bannerPartner.url}
+        alt="Novantis Bouwgroep — één partner, alles onder één dak"
+        loading="lazy"
+        className="mx-auto block w-full max-w-7xl px-4 pb-10 lg:px-8"
+      />
+    </section>
+  );
+}
+
+function Gallery() {
+  return (
+    <section id="realisaties" className="bg-card py-16 lg:py-24">
+      <div className="mx-auto max-w-7xl px-4 lg:px-8">
+        <div className="max-w-2xl">
+          <span className="block h-1 w-16 bg-brand-gradient" />
+          <h2 className="mt-5 text-3xl font-bold sm:text-4xl">Onze realisaties</h2>
+          <p className="mt-3 text-muted-foreground">
+            Een greep uit recente projecten in Antwerpen en omstreken.
+          </p>
+        </div>
+        <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          {projects.map((p) => (
+            <figure
+              key={p.title}
+              className="group overflow-hidden rounded-xl border border-border shadow-card"
+            >
+              <img
+                src={p.img}
+                alt={p.title}
+                loading="lazy"
+                width={1024}
+                height={768}
+                className="h-52 w-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+              <figcaption className="bg-background p-4">
+                <p className="text-sm font-semibold">{p.title}</p>
+                <p className="text-xs text-muted-foreground">{p.place}</p>
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+        <img
+          src={bannerDiensten.url}
+          alt="Overzicht van de diensten van Novantis Bouwgroep"
+          loading="lazy"
+          className="mt-10 w-full rounded-xl border border-border shadow-card"
+        />
+      </div>
+    </section>
+  );
+}
+
+function Team() {
+  return (
+    <section id="team" className="mx-auto max-w-7xl px-4 py-16 lg:px-8 lg:py-24">
+      <div className="grid items-center gap-10 lg:grid-cols-2">
+        <img
+          src={teamPhoto.url}
+          alt="Het team van Novantis Bouwgroep"
+          loading="lazy"
+          className="w-full rounded-xl border border-border object-cover shadow-card"
+        />
+        <div>
+          <span className="block h-1 w-16 bg-brand-gradient" />
+          <h2 className="mt-5 text-3xl font-bold sm:text-4xl">Uw persoonlijke adviseurs</h2>
+          <p className="mt-3 text-muted-foreground">
+            U krijgt één vast aanspreekpunt dat uw project van intake tot oplevering opvolgt.
+          </p>
+          <ul className="mt-6 space-y-4">
+            {[
+              ["Tom Verheyen", "Energie-adviseur", "Zonnepanelen, batterijen, warmtepompen & laadpalen"],
+              ["Lotte De Smet", "Renovatie-adviseur", "Dak-, gevelrenovaties en badkamers"],
+              ["Jeroen Maes", "Technisch adviseur", "Ventilatie, verwarming en sanitair"],
+            ].map(([name, role, focus]) => (
+              <li key={name} className="rounded-xl border border-border bg-card p-4 shadow-card">
+                <p className="font-semibold">{name}</p>
+                <p className="text-sm text-primary">{role}</p>
+                <p className="mt-1 text-sm text-muted-foreground">{focus}</p>
+              </li>
+            ))}
+          </ul>
+          <a
+            href="#offerte"
+            className="mt-8 inline-flex items-center gap-2 rounded-md bg-brand-gradient px-6 py-3 text-sm font-bold text-primary-foreground shadow-glow"
+          >
+            Vraag persoonlijk advies <ArrowRight className="size-4" />
+          </a>
         </div>
       </div>
     </section>
