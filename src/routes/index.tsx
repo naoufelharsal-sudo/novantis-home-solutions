@@ -208,7 +208,9 @@ function Index() {
         <Hero />
         <ServiceStrip />
         <Services />
+        <Gallery />
         <WhyUs />
+        <Team />
         <Process />
         <Testimonials />
         <Faq />
