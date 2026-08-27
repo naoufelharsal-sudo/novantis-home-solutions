@@ -30,6 +30,20 @@ import svcRoof from "@/assets/svc-roof.jpg";
 import svcBathroom from "@/assets/svc-bathroom.jpg";
 import svcElectric from "@/assets/svc-electric.jpg";
 import svcInterior from "@/assets/svc-interior.jpg";
+import teamPhoto from "@/assets/team-novantis.jpg.asset.json";
+import bannerDiensten from "@/assets/banner-diensten.jpg.asset.json";
+import bannerPartner from "@/assets/banner-partner.jpg.asset.json";
+import projSolarInstall from "@/assets/proj-solar-install.jpg";
+import projFacade from "@/assets/proj-facade.jpg";
+import projTechniek from "@/assets/proj-techniek.jpg";
+import projBadkamer from "@/assets/proj-badkamer.jpg";
+
+const projects = [
+  { img: projSolarInstall, title: "Zonnepanelen op pannendak", place: "Antwerpen" },
+  { img: projFacade, title: "Gevelrenovatie & isolatie", place: "Mechelen" },
+  { img: projTechniek, title: "Warmtepomp & thuisbatterij", place: "Lier" },
+  { img: projBadkamer, title: "Badkamer volledig afgewerkt", place: "Brasschaat" },
+];
 
 export const Route = createFileRoute("/")({
   head: () => ({
