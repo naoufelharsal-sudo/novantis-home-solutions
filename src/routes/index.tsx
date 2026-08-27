@@ -22,7 +22,7 @@ import {
 import logoDark from "@/assets/logo-dark.jpg.asset.json";
 import logoLight from "@/assets/logo-light.jpg.asset.json";
 import heroHome from "@/assets/hero-home.jpg";
-import heroVideo from "@/assets/hero-video.mp4.asset.json";
+import heroVideo from "@/assets/hero-video-new.mp4.asset.json";
 import svcSolar from "@/assets/svc-solar.jpg";
 import svcBattery from "@/assets/svc-battery.jpg";
 import svcHeatpump from "@/assets/svc-heatpump.jpg";
