@@ -300,23 +300,10 @@ function Header() {
 function Hero() {
   return (
     <section id="top" className="relative overflow-hidden bg-navy-gradient">
-      <video
-        src={heroVideo.url}
-        autoPlay
-        muted
-        loop
-        playsInline
-        poster={heroHome}
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 size-full object-cover opacity-30"
-      />
-      <div
-        aria-hidden="true"
-        className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/70 to-background/90"
-      />
-      <div className="relative mx-auto grid max-w-7xl items-center gap-10 px-4 py-14 lg:grid-cols-2 lg:gap-14 lg:px-8 lg:py-24">
+      <div className="relative mx-auto grid max-w-7xl items-center gap-10 px-4 py-10 lg:grid-cols-2 lg:gap-14 lg:px-8 lg:py-24">
 
-        <div>
+        <div className="order-2 lg:order-1">
+
           <p className="text-xs font-semibold tracking-[0.25em] text-brand-gradient">
             BOUWEN. RENOVEREN. VERDUURZAMEN.
           </p>
