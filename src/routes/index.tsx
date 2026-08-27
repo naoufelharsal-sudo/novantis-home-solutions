@@ -354,11 +354,12 @@ function Hero() {
             Onze diensten
           </a>
         </div>
-        <div className="mt-10 grid max-w-lg grid-cols-3 gap-4 border-t border-white/15 pt-6">
+        <div className="mt-10 grid max-w-2xl grid-cols-2 gap-4 border-t border-white/15 pt-6 sm:grid-cols-4">
           {[
             ["10+", "Jaar ervaring"],
             ["500+", "Tevreden klanten"],
             ["100%", "Eigen opvolging"],
+            ["70%", "Besparing energiefactuur"],
           ].map(([big, small]) => (
             <div key={small}>
               <p className="font-display text-2xl font-bold text-brand-gradient lg:text-3xl">
@@ -367,14 +368,6 @@ function Hero() {
               <p className="mt-1 text-xs text-white/70">{small}</p>
             </div>
           ))}
-        </div>
-      </div>
-
-      <div className="absolute bottom-6 left-4 right-4 sm:left-8 sm:right-auto">
-        <div className="rounded-xl border border-white/15 bg-navy/80 px-5 py-4 shadow-card backdrop-blur-md">
-          <p className="text-xs text-white/70">Bespaar tot</p>
-          <p className="font-display text-3xl font-bold text-brand-gradient">70%</p>
-          <p className="text-xs text-white/70">op uw energiefactuur</p>
         </div>
       </div>
     </section>
