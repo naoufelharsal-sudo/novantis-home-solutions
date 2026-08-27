@@ -34,7 +34,7 @@ export const Route = createFileRoute("/diensten/$slug")({
     };
   },
   notFoundComponent: DienstNotFound,
-  component: DienstDetail;
+  component: DienstDetail,
 });
 
 function DienstNotFound() {
