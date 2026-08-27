@@ -10,33 +10,102 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as OverOnsRouteImport } from './routes/over-ons'
+import { Route as RealisatiesRouteImport } from './routes/realisaties'
+import { Route as DienstenIndexRouteImport } from './routes/diensten.index'
+import { Route as DienstenSlugRouteImport } from './routes/diensten.$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OverOnsRoute = OverOnsRouteImport.update({
+  id: '/over-ons',
+  path: '/over-ons',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RealisatiesRoute = RealisatiesRouteImport.update({
+  id: '/realisaties',
+  path: '/realisaties',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DienstenIndexRoute = DienstenIndexRouteImport.update({
+  id: '/diensten/',
+  path: '/diensten/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DienstenSlugRoute = DienstenSlugRouteImport.update({
+  id: '/diensten/$slug',
+  path: '/diensten/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/contact': typeof ContactRoute
+  '/over-ons': typeof OverOnsRoute
+  '/realisaties': typeof RealisatiesRoute
+  '/diensten/$slug': typeof DienstenSlugRoute
+  '/diensten/': typeof DienstenIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/contact': typeof ContactRoute
+  '/over-ons': typeof OverOnsRoute
+  '/realisaties': typeof RealisatiesRoute
+  '/diensten/$slug': typeof DienstenSlugRoute
+  '/diensten': typeof DienstenIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/contact': typeof ContactRoute
+  '/over-ons': typeof OverOnsRoute
+  '/realisaties': typeof RealisatiesRoute
+  '/diensten/$slug': typeof DienstenSlugRoute
+  '/diensten/': typeof DienstenIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/contact'
+    | '/over-ons'
+    | '/realisaties'
+    | '/diensten/$slug'
+    | '/diensten/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/contact'
+    | '/over-ons'
+    | '/realisaties'
+    | '/diensten/$slug'
+    | '/diensten'
+  id:
+    | '__root__'
+    | '/'
+    | '/contact'
+    | '/over-ons'
+    | '/realisaties'
+    | '/diensten/$slug'
+    | '/diensten/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ContactRoute: typeof ContactRoute
+  OverOnsRoute: typeof OverOnsRoute
+  RealisatiesRoute: typeof RealisatiesRoute
+  DienstenSlugRoute: typeof DienstenSlugRoute
+  DienstenIndexRoute: typeof DienstenIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +117,51 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/over-ons': {
+      id: '/over-ons'
+      path: '/over-ons'
+      fullPath: '/over-ons'
+      preLoaderRoute: typeof OverOnsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/realisaties': {
+      id: '/realisaties'
+      path: '/realisaties'
+      fullPath: '/realisaties'
+      preLoaderRoute: typeof RealisatiesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/diensten/': {
+      id: '/diensten/'
+      path: '/diensten'
+      fullPath: '/diensten/'
+      preLoaderRoute: typeof DienstenIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/diensten/$slug': {
+      id: '/diensten/$slug'
+      path: '/diensten/$slug'
+      fullPath: '/diensten/$slug'
+      preLoaderRoute: typeof DienstenSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ContactRoute: ContactRoute,
+  OverOnsRoute: OverOnsRoute,
+  RealisatiesRoute: RealisatiesRoute,
+  DienstenSlugRoute: DienstenSlugRoute,
+  DienstenIndexRoute: DienstenIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
