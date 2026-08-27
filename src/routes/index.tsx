@@ -358,14 +358,19 @@ function Hero() {
             ))}
           </div>
         </div>
-        <div className="relative">
-          <img
-            src={heroHome}
-            alt="Moderne woning met zonnepanelen bij avondlicht"
-            width={1600}
-            height={1104}
-            className="w-full rounded-xl object-cover shadow-glow"
+        <div className="relative order-1 lg:order-2">
+          <video
+            src={heroVideo.url}
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            poster={heroHome}
+            aria-label="Novantis Bouwgroep in beeld"
+            className="aspect-[4/5] w-full rounded-xl object-cover shadow-glow ring-1 ring-white/15 sm:aspect-video"
           />
+
           <div className="absolute -bottom-5 left-4 rounded-xl bg-card px-5 py-4 shadow-card sm:left-8">
             <p className="text-xs text-muted-foreground">Bespaar tot</p>
             <p className="font-display text-3xl font-bold text-brand-gradient">70%</p>
