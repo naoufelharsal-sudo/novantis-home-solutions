@@ -299,108 +299,84 @@ function Header() {
 
 function Hero() {
   return (
-    <section id="top" className="relative overflow-hidden bg-navy-gradient">
-      <div className="relative mx-auto grid max-w-7xl items-center gap-10 px-4 py-10 lg:grid-cols-2 lg:gap-14 lg:px-8 lg:py-24">
+    <section id="top" className="relative min-h-[88vh] overflow-hidden">
+      <video
+        src={heroVideo.url}
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="metadata"
+        poster={heroHome}
+        aria-label="Novantis Bouwgroep in beeld"
+        className="absolute inset-0 h-full w-full object-cover"
+      />
+      <div className="absolute inset-0 bg-gradient-to-r from-navy/95 via-navy/80 to-navy/50" />
+      <div className="absolute inset-0 bg-gradient-to-t from-navy via-transparent to-navy/40" />
 
-        <div className="order-2 lg:order-1">
-
-          <p className="text-xs font-semibold tracking-[0.25em] text-brand-gradient">
-            BOUWEN. RENOVEREN. VERDUURZAMEN.
-          </p>
-          <h1 className="mt-5 text-4xl font-bold text-white sm:text-5xl lg:text-6xl">
-            Uw volledige woning
-            <br />
-            bij <span className="text-brand-gradient">één partner</span>
-          </h1>
-          <p className="mt-5 max-w-xl text-base text-white/70 lg:text-lg">
-            Zonnepanelen, thuisbatterijen en warmtepompen. Dak- en gevelrenovatie,
-            binnenafwerking, sanitair en elektriciteit. Novantis Bouwgroep regelt uw project
-            van A tot Z.
-          </p>
-          <ul className="mt-6 space-y-3">
-            {[
-              "Eén aanspreekpunt voor al uw werken",
-              "Eigen vakmensen, vaste planning",
-              "Advies over premies en subsidies",
-            ].map((t) => (
-              <li key={t} className="flex items-center gap-3 text-sm text-white/85">
-                <CheckCircle2 className="size-5 shrink-0 text-brand-green" />
-                {t}
-              </li>
-            ))}
-          </ul>
-          <div className="mt-8 flex flex-wrap gap-3">
-            <a
-              href="#offerte"
-              className="inline-flex items-center gap-2 rounded-md bg-brand-gradient px-6 py-3 text-sm font-bold text-primary-foreground shadow-glow"
-            >
-              Gratis offerte aanvragen <ArrowRight className="size-4" />
-            </a>
-            <a
-              href="#diensten"
-              className="inline-flex items-center gap-2 rounded-md border border-white/25 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-white/10"
-            >
-              Onze diensten
-            </a>
-          </div>
-          <div className="mt-10 grid max-w-lg grid-cols-3 gap-4 border-t border-white/10 pt-6">
-            {[
-              ["10+", "Jaar ervaring"],
-              ["500+", "Tevreden klanten"],
-              ["100%", "Eigen opvolging"],
-            ].map(([big, small]) => (
-              <div key={small}>
-                <p className="font-display text-2xl font-bold text-brand-gradient lg:text-3xl">
-                  {big}
-                </p>
-                <p className="mt-1 text-xs text-white/60">{small}</p>
-              </div>
-            ))}
-          </div>
+      <div className="relative mx-auto flex min-h-[88vh] max-w-7xl flex-col justify-center px-4 py-24 lg:px-8">
+        <p className="text-xs font-semibold tracking-[0.25em] text-brand-gradient">
+          BOUWEN. RENOVEREN. VERDUURZAMEN.
+        </p>
+        <h1 className="mt-5 max-w-3xl text-4xl font-bold text-white sm:text-5xl lg:text-6xl">
+          Uw volledige woning
+          <br />
+          bij <span className="text-brand-gradient">één partner</span>
+        </h1>
+        <p className="mt-5 max-w-2xl text-base text-white/80 lg:text-lg">
+          Zonnepanelen, thuisbatterijen en warmtepompen. Dak- en gevelrenovatie,
+          binnenafwerking, sanitair en elektriciteit. Novantis Bouwgroep regelt uw project
+          van A tot Z.
+        </p>
+        <ul className="mt-6 space-y-3">
+          {[
+            "Eén aanspreekpunt voor al uw werken",
+            "Eigen vakmensen, vaste planning",
+            "Advies over premies en subsidies",
+          ].map((t) => (
+            <li key={t} className="flex items-center gap-3 text-sm text-white/90">
+              <CheckCircle2 className="size-5 shrink-0 text-brand-green" />
+              {t}
+            </li>
+          ))}
+        </ul>
+        <div className="mt-8 flex flex-wrap gap-3">
+          <a
+            href="#offerte"
+            className="inline-flex items-center gap-2 rounded-md bg-brand-gradient px-6 py-3 text-sm font-bold text-primary-foreground shadow-glow"
+          >
+            Gratis offerte aanvragen <ArrowRight className="size-4" />
+          </a>
+          <a
+            href="#diensten"
+            className="inline-flex items-center gap-2 rounded-md border border-white/30 bg-white/10 px-6 py-3 text-sm font-semibold text-white backdrop-blur-sm transition-colors hover:bg-white/20"
+          >
+            Onze diensten
+          </a>
         </div>
-        <div className="relative order-1 lg:order-2">
-          <video
-            src={heroVideo.url}
-            autoPlay
-            muted
-            loop
-            playsInline
-            preload="metadata"
-            poster={heroHome}
-            aria-label="Novantis Bouwgroep in beeld"
-            className="aspect-[4/5] w-full rounded-xl object-cover shadow-glow ring-1 ring-white/15 sm:aspect-video"
-          />
-
-          <div className="absolute -bottom-5 left-4 rounded-xl bg-card px-5 py-4 shadow-card sm:left-8">
-            <p className="text-xs text-muted-foreground">Bespaar tot</p>
-            <p className="font-display text-3xl font-bold text-brand-gradient">70%</p>
-            <p className="text-xs text-muted-foreground">op uw energiefactuur</p>
-          </div>
-          <div className="mt-10 grid grid-cols-3 gap-3">
-            {[
-              { src: projSolarInstall, alt: "Plaatsing van zonnepanelen op een dak" },
-              { src: projTechniek, alt: "Warmtepomp en thuisbatterij in technische ruimte" },
-              { src: projBadkamer, alt: "Afgewerkte moderne badkamer" },
-            ].map((t) => (
-              <img
-                key={t.alt}
-                src={t.src}
-                alt={t.alt}
-                loading="lazy"
-                width={1024}
-                height={768}
-                className="h-20 w-full rounded-lg object-cover ring-1 ring-white/15 sm:h-28"
-              />
-            ))}
-          </div>
+        <div className="mt-10 grid max-w-lg grid-cols-3 gap-4 border-t border-white/15 pt-6">
+          {[
+            ["10+", "Jaar ervaring"],
+            ["500+", "Tevreden klanten"],
+            ["100%", "Eigen opvolging"],
+          ].map(([big, small]) => (
+            <div key={small}>
+              <p className="font-display text-2xl font-bold text-brand-gradient lg:text-3xl">
+                {big}
+              </p>
+              <p className="mt-1 text-xs text-white/70">{small}</p>
+            </div>
+          ))}
         </div>
       </div>
-      <img
-        src={bannerPartner.url}
-        alt="Novantis Bouwgroep — één partner, alles onder één dak"
-        loading="lazy"
-        className="mx-auto block w-full max-w-7xl px-4 pb-10 lg:px-8"
-      />
+
+      <div className="absolute bottom-6 left-4 right-4 sm:left-8 sm:right-auto">
+        <div className="rounded-xl border border-white/15 bg-navy/80 px-5 py-4 shadow-card backdrop-blur-md">
+          <p className="text-xs text-white/70">Bespaar tot</p>
+          <p className="font-display text-3xl font-bold text-brand-gradient">70%</p>
+          <p className="text-xs text-white/70">op uw energiefactuur</p>
+        </div>
+      </div>
     </section>
   );
 }
