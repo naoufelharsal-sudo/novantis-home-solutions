@@ -16,6 +16,8 @@ function novantis_setup() {
 }
 add_action( 'after_setup_theme', 'novantis_setup' );
 
+require get_template_directory() . '/inc/icons.php';
+
 function novantis_assets() {
 	wp_enqueue_style(
 		'novantis-fonts',
@@ -73,14 +75,14 @@ add_action( 'admin_post_nopriv_novantis_quote', 'novantis_handle_quote' );
  */
 function novantis_services() {
 	return array(
-		array( 'slug' => 'zonnepanelen',    'titel' => 'Zonnepanelen',    'img' => 'svc-solar.jpg',    'beschrijving' => 'Hoogrendement-panelen, professioneel geplaatst en aangesloten. Bespaar direct op uw energiefactuur.' ),
-		array( 'slug' => 'thuisbatterij',   'titel' => 'Thuisbatterij',   'img' => 'svc-battery.jpg',  'beschrijving' => 'Sla uw zonne-energie op en gebruik stroom wanneer u die nodig heeft — ook na zonsondergang.' ),
-		array( 'slug' => 'warmtepompen',    'titel' => 'Warmtepompen',    'img' => 'svc-heatpump.jpg', 'beschrijving' => 'Duurzaam verwarmen en koelen met een warmtepomp, volledig geïnstalleerd en ingeregeld.' ),
-		array( 'slug' => 'gevelrenovatie',  'titel' => 'Gevelrenovatie',  'img' => 'svc-facade.jpg',   'beschrijving' => 'Isolatie, crepi en gevelbekleding voor een woning die er als nieuw uitziet én beter isoleert.' ),
-		array( 'slug' => 'dakrenovatie',    'titel' => 'Dakrenovatie',    'img' => 'svc-roof.jpg',     'beschrijving' => 'Van dakpannen tot volledige dakstructuren — waterdicht en duurzaam gerenoveerd.' ),
-		array( 'slug' => 'binnenafwerking', 'titel' => 'Binnenafwerking', 'img' => 'svc-interior.jpg', 'beschrijving' => 'Gyproc, pleisterwerk, vloeren en schilderwerk: uw interieur volledig afgewerkt.' ),
-		array( 'slug' => 'sanitair',        'titel' => 'Sanitair',        'img' => 'svc-bathroom.jpg', 'beschrijving' => 'Complete badkamers en sanitaire installaties, van leidingwerk tot de laatste tegel.' ),
-		array( 'slug' => 'elektriciteit',   'titel' => 'Elektriciteit',   'img' => 'svc-electric.jpg', 'beschrijving' => 'Installaties, vernieuwing, laadpalen en domotica — veilig en volgens norm.' ),
+		array( 'slug' => 'zonnepanelen',    'titel' => 'Zonnepanelen',          'icon' => 'sun',     'img' => 'svc-solar.jpg',    'beschrijving' => 'Hoogrendementspanelen met optimale opbrengst, netjes geïnstalleerd en volledig gekeurd.' ),
+		array( 'slug' => 'thuisbatterij',   'titel' => 'Thuisbatterijen',       'icon' => 'battery', 'img' => 'svc-battery.jpg',  'beschrijving' => 'Uw eigen stroom opslaan en ’s avonds gebruiken. Maximale zelfconsumptie, lagere factuur.' ),
+		array( 'slug' => 'warmtepompen',    'titel' => 'Warmtepompen',          'icon' => 'flame',   'img' => 'svc-heatpump.jpg', 'beschrijving' => 'Lucht-water en lucht-lucht warmtepompen voor verwarming, koeling en sanitair warm water.' ),
+		array( 'slug' => 'gevelrenovatie',  'titel' => 'Gevelrenovaties',       'icon' => 'layers',  'img' => 'svc-facade.jpg',   'beschrijving' => 'Gevelisolatie, crepi, sierpleister en steenstrips. Beter isoleren met een nieuwe look.' ),
+		array( 'slug' => 'dakrenovatie',    'titel' => 'Dakrenovaties',         'icon' => 'home',    'img' => 'svc-roof.jpg',     'beschrijving' => 'Volledige dakvernieuwing, dakisolatie en waterdichting. Duurzaam en winddicht.' ),
+		array( 'slug' => 'sanitair',        'titel' => 'Sanitair & badkamers',  'icon' => 'bath',    'img' => 'svc-bathroom.jpg', 'beschrijving' => 'Volledige badkamerrenovatie: leidingwerk, tegelwerk en plaatsing, sleutel-op-de-deur.' ),
+		array( 'slug' => 'elektriciteit',   'titel' => 'Elektriciteit',         'icon' => 'zap',     'img' => 'svc-electric.jpg', 'beschrijving' => 'Nieuwe installaties, zekeringkasten, laadpalen en keuring conform AREI.' ),
+		array( 'slug' => 'binnenafwerking', 'titel' => 'Binnenafwerking',       'icon' => 'hammer',  'img' => 'svc-interior.jpg', 'beschrijving' => 'Pleisterwerk, vloeren, gyproc, schilderwerk en maatwerk. Afgewerkt tot in detail.' ),
 	);
 }
 
@@ -108,11 +110,6 @@ function novantis_projects() {
 		array( 'img' => 'proj-techniek.jpg', 'titel' => 'Warmtepomp & thuisbatterij', 'plaats' => 'Lier' ),
 		array( 'img' => 'proj-badkamer.jpg', 'titel' => 'Badkamer volledig afgewerkt', 'plaats' => 'Brasschaat' ),
 	);
-}
-
-function novantis_service_icon( $index ) {
-	$icons = array( '☀', '▣', '♨', '▤', '⌂', '▰', 'ϟ', '◆' );
-	return isset( $icons[ $index ] ) ? $icons[ $index ] : '✓';
 }
 
 function novantis_reasons() {
