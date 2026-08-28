@@ -208,6 +208,8 @@ function Index() {
       <main>
         <Hero />
         <ServiceStrip />
+        <Configurator />
+
         <Services />
         <Gallery />
         <WhyUs />
