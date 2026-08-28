@@ -19,6 +19,7 @@ import {
   Zap,
 } from "lucide-react";
 
+import { Configurator } from "@/components/site/Configurator";
 import logoDark from "@/assets/logo-dark.jpg.asset.json";
 import logoLight from "@/assets/logo-light.jpg.asset.json";
 import heroHome from "@/assets/hero-home.jpg";
@@ -208,6 +209,8 @@ function Index() {
       <main>
         <Hero />
         <ServiceStrip />
+        <Configurator />
+
         <Services />
         <Gallery />
         <WhyUs />
